@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Change a map's style</title>
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+		<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+		<style>
+			body { margin: 0; padding: 0; }
+			#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+			.marker {
+			  background-image: url('images/mapbox-icon.png');
+			  background-size: cover;
+			  width: 50px;
+			  height: 50px;
+			  border-radius: 50%;
+			  cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<style>
+		#menu {
+		position: absolute;
+		background: #fff;
+		padding: 10px;
+		font-family: 'Open Sans', sans-serif;
+		}
+		</style>
+		 
+		<div id="map"></div>
+		
+		<script>
+			mapboxgl.accessToken = 'pk.eyJ1IjoibHVkb3ZpY21hZ25vbCIsImEiOiJja2RhY3NpeDgwY3J3MnJtejJ0dGVqMWpoIn0.tkfQnbM32YuxpFREw54HJg';
+		var map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/dark-v10',
+		zoom: 1.5,
+		center: [1.7578125, 39.36827914916014]
+		});
+		 
+		var geojson = {
+		  type: 'FeatureCollection',
+		  features: [{
+		    type: 'Feature',
+		    geometry: {
+		      type: 'Point',
+		      coordinates: [4.361572265625, 50.84930707388861]
+		    },
+		    properties: {
+		      title: 'Mapbox',
+		      description: 'Belgique'
+		    }
+		  },
+		  {
+		    type: 'Feature',
+		    geometry: {
+		      type: 'Point',
+		      coordinates: [-3.698272705078125, 40.41872386677478]
+		    },
+		    properties: {
+		      title: 'Mapbox',
+		      description: 'Espagne'
+		    }
+		   },
+		    {
+		    type: 'Feature',
+		    geometry: {
+		      type: 'Point',
+		      coordinates: [12.487335205078123, 41.893843994902234]
+		    },
+		    properties: {
+		      title: 'Mapbox',
+		      description: 'Italie'
+		    }
+		   },
+		    {
+		    type: 'Feature',
+		    geometry: {
+		      type: 'Point',
+		      coordinates: [16.372718811035156, 48.20705775366278]
+		    },
+		    properties: {
+		      title: 'Mapbox',
+		      description: 'Autriche'
+		    }
+		   },
+		    {
+		    type: 'Feature',
+		    geometry: {
+		      type: 'Point',
+		      coordinates: [19.044113159179688, 47.49679221520181]
+		    },
+		    properties: {
+		      title: 'Mapbox',
+		      description: 'Hongrie'
+		    }
+		   },
+		    {
+		    type: 'Feature',
+		    geometry: {
+		      type: 'Point',
+		      coordinates: [4.8978424072265625, 52.36931095278263]
+		    },
+		    properties: {
+		      title: 'Mapbox',
+		      description: 'Pays-Bas'
+		    }
+		   },
+		    {
+		    type: 'Feature',
+		    geometry: {
+		      type: 'Point',
+		      coordinates: [-432.498779296875, 19.751194318940865]
+		    },
+		    properties: {
+		      title: 'Mapbox',
+		      description: 'Haiti'
+		    }
+		   },
+		    {
+		    type: 'Feature',
+		    geometry: {
+		      type: 'Point',
+		      coordinates: [-436.7995834350586, 17.99114188995226]
+		    },
+		    properties: {
+		      title: 'Mapbox',
+		      description: 'Jamaique'
+		    }
+		   },
+		    {
+		    type: 'Feature',
+		    geometry: {
+		      type: 'Point',
+		      coordinates: [-441.97448730468744, 28.9023972285585]
+		    },
+		    properties: {
+		      title: 'Mapbox',
+		      description: 'Floride'
+		    }
+		   },
+		    {
+		    type: 'Feature',
+		    geometry: {
+		      type: 'Point',
+		      coordinates: [-471.77490234375, 34.07086232376631]
+		    },
+		    properties: {
+		      title: 'Mapbox',
+		      description: 'Arizona'
+		    }
+		   },
+		    {
+		    type: 'Feature',
+		    geometry: {
+		      type: 'Point',
+		      coordinates: [-478.22937011718756, 34.20271636159618]
+		    },
+		    properties: {
+		      title: 'Mapbox',
+		      description: 'Californie'
+		    }
+		   },
+		    {
+		    type: 'Feature',
+		    geometry: {
+		      type: 'Point',
+		      coordinates: [-476.5457153320313, 40.11799004890473]
+		    },
+		    properties: {
+		      title: 'Mapbox',
+		      description: 'Nevada'
+		    }
+		   },
+		    {
+		    type: 'Feature',
+		    geometry: {
+		      type: 'Point',
+		      coordinates: [-465.4083251953125, 39.29604824402406]
+		    },
+		    properties: {
+		      title: 'Mapbox',
+		      description: 'Colorado'
+		    }
+		   },
+		    {
+		    type: 'Feature',
+		    geometry: {
+		      type: 'Point',
+		      coordinates: [123.6181640625, 9.199715262283302]
+		    },
+		    properties: {
+		      title: 'Mapbox',
+		      description: 'Philippines'
+		    }
+		  }]
+		};
+
+		geojson.features.forEach(function(marker) {
+
+		  // create a HTML element for each feature
+		  var el = document.createElement('div');
+		  el.className = 'marker';
+
+		  // make a marker for each feature and add to the map
+		  new mapboxgl.Marker(el)
+		    .setLngLat(marker.geometry.coordinates)
+		    .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+              .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+		    .addTo(map);
+		});
+
+
+
+		</script>
+	</body>
+</html>
