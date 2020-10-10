@@ -118,6 +118,14 @@ nav li:hover a{
   width: 56px;
   border-radius: 50%;
 }
+.monparcours2{
+  background-size: cover;
+  width: 100%;
+  height: 800px;
+  font-weight: lighter;
+  border-top: 5px solid black;
+  margin-bottom: 0px;
+}
 .autresexpe{
   display: flex;
   justify-content: space-around;
@@ -165,4 +173,35 @@ nav li:hover a{
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+@media screen and (max-width: 1142px) {
+  .parcours2 {
+    padding-top: 0px;
+  }
+  .monparcours{
+    height: 900px;
+  }
+}
+@media screen and (max-width: 1061px) {
+  .card-product {
+    width: 250px;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .parcours2{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media screen and (max-width: 780px) {
+  .monparcours2{
+    display: none;
+  }
+}
+@media screen and (max-width: 670px) {
+  .parcours1 p{
+    color: black;
+    font-size: 15px;
+  }
 }

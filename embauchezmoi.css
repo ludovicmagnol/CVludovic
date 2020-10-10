@@ -172,3 +172,92 @@ text-shadow:   1px 0px #000000, 0px 1px #000000,
   height: 920px;
   font-weight: lighter;
 }
+
+@media screen and (max-width: 1600px) {
+  .numero{
+    padding-top: 58px;
+  }
+}
+@media screen and (max-width: 1352px) {
+  .numero{
+    padding-right: 0px;
+    padding-left: 114px;
+  }
+}
+@media screen and (max-width: 1220px) {
+  .numero{
+    padding-left: 263px;
+  }
+  .mail{
+    padding-left: 209px;
+  }
+}
+@media screen and (max-width: 1068px) {
+  .numero{
+    padding-left: 410px;
+  }
+  .mail{
+    padding-left: 383px;
+  }
+}
+@media screen and (max-width: 921px) {
+  .numero{
+    padding-left: 556px;
+  }
+  .mail{
+    padding-left: 544px;
+  }
+}
+@media screen and (max-width: 765px) {
+  .numero{
+    padding-left: 69px;
+  }
+  .mail{
+    padding-left: 5px;
+    padding-top: 0px;
+  }
+}
+@media screen and (max-width: 742px) {
+  .numero{
+    padding-top: 310px;
+    padding-left: 134px;
+  }
+  .mail{
+    padding-left: 147px;
+    padding-top: 0px;
+  }
+}
+@media screen and (max-width: 632px) {
+  .numero{
+    padding-top: 245px;
+  }
+}
+@media screen and (max-width: 624px) {
+  .citation{
+    display: none;
+  }
+  .numero{
+    padding-top: 303px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .prenom{
+    padding-right: 140px;
+  }
+  .mail{
+    padding-left: 292px;
+  }
+  .numero{
+    padding-left: 230px;
+  }
+}
+@media screen and (max-width: 455px) {
+  .mail{
+    padding-left: 0px;
+    text-align: left;
+  }
+  .numero{
+    text-align: left;
+    padding-left: 97px;
+  }
+}
